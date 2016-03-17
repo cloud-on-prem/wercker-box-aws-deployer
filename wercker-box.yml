@@ -1,0 +1,17 @@
+name: aws-deployer
+version: 0.0.1
+inherits: wercker/nodejs
+type: service
+platform: ubuntu@12.04
+description: wercker box with aws-cli and node.js installed - helps deploy to aws
+keywords:
+  - aws-cli
+  - opensource
+  - nodejs
+packages:
+  - unzip
+  - python2.7
+script: |
+  sudo apt-get update
+  sudo apt-get -y install python-pip
+  sudo pip install awscli
